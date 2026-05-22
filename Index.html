@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mehfill Fine Dining – Where Taste Meets Ambience. Premium restaurant in Basti, Uttar Pradesh offering North Indian, Chinese, Pizza, Fast Food & Mocktails." />
+  <meta name="keywords" content="Mehfill Fine Dining, Basti restaurant, rooftop dining, North Indian food, family dining Basti UP" />
+  <meta property="og:title" content="Mehfill Fine Dining – Where Taste Meets Ambience" />
+  <meta property="og:description" content="Premium rooftop dining experience in Basti, Uttar Pradesh." />
+  <title>Mehfill Fine Dining | Where Taste Meets Ambience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dark: #9b7a2f;
+      --cream: #f5efe6;
+      --dark: #0d0b08;
+      --dark2: #1a1610;
+      --dark3: #241f18;
+      --dark4: #2e2820;
+      --charcoal: #3a3228;
+      --text-light: #f0e9de;
+      --text-muted: #a89880;
+      --red-accent: #c0392b;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --shadow-gold: 0 8px 40px rgba(201, 168, 76, 0.18);
+      --shadow-dark: 0 16px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    section { position: relative; overflow: hidden; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+
+    /* ===== LOADER ===== */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--dark);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 24px;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-emblem {
+      width: 90px; height: 90px;
+      border: 2px solid var(--dark3);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+    .loader-inner {
+      position: absolute;
+      width: 70px; height: 70px;
+      border: 2px solid var(--dark3);
+      border-bottom-color: var(--gold-light);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite reverse;
+    }
+    .loader-center-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+    .loader-dot {
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 1.2s ease infinite;
+    }
+    .loader-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      animation: fadeInUp 0.8s ease 0.3s both;
+    }
+    .loader-tagline {
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      animation: fadeInUp 0.8s ease 0.5s both;
+    }
+    .loader-credit {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      animation: fadeInUp 0.8s ease 0.7s both;
+    }
+    .loader-credit a {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold-dark);
+      transition: color 0.3s;
+    }
+    .loader-credit a:hover { color: var(--gold-light); }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.4);opacity:0.6;} }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideDown { from{opacity:0;transform:translateY(-30px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes slideRight { from{opacity:0;transform:translateX(-40px);} to{opacity:1;transform:translateX(0);} }
+    @keyframes shimmer { 0%{background-position:-200% center;} 100%{background-position:200% center;} }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+    @keyframes scaleIn { from{transform:scale(0.8);opacity:0;} to{transform:scale(1);opacity:1;} }
+    @keyframes countUp { from{opacity:0;} to{opacity:1;} }
+    @keyframes borderGlow { 0%,100%{box-shadow:0 0 10px var(--gold-dark);} 50%{box-shadow:0 0 30px var(--gold);} }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 5%;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
+      border-bottom: 1px solid transparent;
+    }
+    #navbar.scrolled {
+      background: rgba(13, 11, 8, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom-color: rgba(201, 168, 76, 0.15);
+    }
+    .nav-logo { display: flex; flex-direction: column; gap: 0; }
+    .nav-logo-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .nav-logo-sub {
+      font-size: 0.55rem;
+      letter-spacing: 4px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 36px;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      padding: 9px 22px;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      border-radius: 30px;
+      font-size: 0.72rem !important;
+      letter-spacing: 2px;
+      transition: background var(--transition), color var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--dark) !important; }
+    .nav-cta::after { display: none !important; }
+    .hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 72px; left: 0; right: 0;
+      background: rgba(13, 11, 8, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      z-index: 999;
+      flex-direction: column;
+      padding: 20px 0;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .mobile-nav.show { display: flex; opacity: 1; transform: translateY(0); }
+    .mobile-nav a {
+      padding: 14px 30px;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: color 0.3s, padding-left 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--gold); padding-left: 40px; }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* ===== HERO SECTION ===== */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      text-align: center;
+      padding: 100px 5% 60px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(13,11,8,0.85) 0%, rgba(26,22,16,0.7) 50%, rgba(13,11,8,0.9) 100%);
+      z-index: 1;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero-particles {
+      position: absolute; inset: 0; z-index: 2;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: float linear infinite;
+      opacity: 0.4;
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      max-width: 860px;
+    }
+    .hero-pre {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 6px 20px;
+      border-radius: 30px;
+      margin-bottom: 28px;
+      animation: fadeInUp 0.8s ease 0.5s both;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      animation: fadeInUp 0.9s ease 0.7s both;
+    }
+    .hero-title span { color: var(--gold); display: block; }
+    .hero-tagline {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--gold-light);
+      margin-bottom: 18px;
+      animation: fadeInUp 0.9s ease 0.9s both;
+    }
+    .hero-type-wrap {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      margin-bottom: 44px;
+      min-height: 28px;
+      animation: fadeInUp 0.9s ease 1.0s both;
+    }
+    #type-text { color: var(--gold-light); }
+    .hero-btns {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      animation: fadeInUp 0.9s ease 1.1s both;
+    }
+    .btn-primary {
+      padding: 15px 38px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 40px;
+      transition: var(--transition);
+      box-shadow: 0 4px 24px rgba(201,168,76,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(201,168,76,0.45);
+    }
+    .btn-outline {
+      padding: 14px 38px;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 40px;
+      transition: var(--transition);
+    }
+    .btn-outline:hover {
+      background: rgba(201,168,76,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(201,168,76,0.15);
+    }
+    .hero-scroll {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: fadeIn 1s ease 1.5s both;
+    }
+    .hero-scroll span {
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .scroll-line {
+      width: 1.5px; height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: float 2s ease infinite;
+    }
+    .hero-ornament {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: min(600px, 80vw); height: min(600px, 80vw);
+      border: 1px solid rgba(201,168,76,0.06);
+      border-radius: 50%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-ornament::before {
+      content: '';
+      position: absolute; inset: 20px;
+      border: 1px solid rgba(201,168,76,0.04);
+      border-radius: 50%;
+    }
+
+    /* ===== SECTION SHARED STYLES ===== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-label::before, .section-label::after {
+      content: '— ';
+      color: var(--gold-dark);
+    }
+    .section-label::after { content: ' —'; }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 20px auto 0;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ===== ABOUT SECTION ===== */
+    #about {
+      padding: 120px 5%;
+      background: var(--dark2);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%; height: 540px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-dark);
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: -28px; right: -28px;
+      width: 200px; height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 4px solid var(--dark2);
+      box-shadow: var(--shadow-gold);
+    }
+    .about-badge {
+      position: absolute;
+      top: 28px; left: -20px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.3);
+    }
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .about-badge-text {
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .about-content { }
+    .about-content .section-header { text-align: left; }
+    .about-content .section-header .divider { margin-left: 0; }
+    .about-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .about-feature {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .about-feature-icon {
+      width: 32px; height: 32px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== SPECIALITIES ===== */
+    #specialities {
+      padding: 120px 5%;
+      background: var(--dark);
+    }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .spec-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .spec-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(201,168,76,0.35);
+      box-shadow: var(--shadow-gold);
+    }
+    .spec-img {
+      width: 100%; height: 180px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .spec-card:hover .spec-img { transform: scale(1.08); }
+    .spec-img-wrap { overflow: hidden; }
+    .spec-body {
+      padding: 22px 20px 24px;
+    }
+    .spec-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .spec-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .spec-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== COUNTERS ===== */
+    #counters {
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--dark3) 0%, var(--dark2) 100%);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .counters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .counter-item { }
+    .counter-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .counter-suffix { color: var(--gold-light); }
+    .counter-label {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    .counter-divider {
+      width: 30px; height: 1.5px;
+      background: var(--gold-dark);
+      margin: 10px auto 0;
+    }
+
+    /* ===== GALLERY ===== */
+    #gallery {
+      padding: 120px 5%;
+      background: var(--dark2);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-img {
+      width: 100%; height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:nth-child(1) .gallery-img,
+    .gallery-item:nth-child(4) .gallery-img { min-height: 300px; }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,11,8,0.85) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      display: flex; align-items: flex-end;
+      padding: 20px;
+    }
+    .gallery-overlay span {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .gallery-item:hover .gallery-img { transform: scale(1.07); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* ===== POPULAR DISHES ===== */
+    #dishes {
+      padding: 120px 5%;
+      background: var(--dark);
+    }
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .dish-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .dish-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: var(--shadow-gold);
+    }
+    .dish-img-wrap { position: relative; overflow: hidden; }
+    .dish-img {
+      width: 100%; height: 220px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .dish-card:hover .dish-img { transform: scale(1.06); }
+    .dish-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .dish-body { padding: 22px 22px 26px; }
+    .dish-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+    .dish-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .dish-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .dish-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .dish-price span { font-size: 0.9rem; color: var(--text-muted); }
+    .dish-rating { display: flex; gap: 2px; }
+    .star { color: var(--gold); font-size: 0.85rem; }
+    .star.empty { color: var(--charcoal); }
+
+    /* ===== WHY CHOOSE US ===== */
+    #why {
+      padding: 120px 5%;
+      background: var(--dark2);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .why-card:hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.25); }
+    .why-card:hover::before { opacity: 1; }
+    .why-icon {
+      width: 70px; height: 70px;
+      background: rgba(201,168,76,0.1);
+      border: 1.5px solid rgba(201,168,76,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+      transition: var(--transition);
+    }
+    .why-card:hover .why-icon {
+      background: rgba(201,168,76,0.18);
+      border-color: var(--gold);
+      animation: borderGlow 2s ease infinite;
+    }
+    .why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .why-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials {
+      padding: 120px 5%;
+      background: var(--dark);
+    }
+    .testimonials-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .testimonial-slider { overflow: hidden; }
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 10px;
+    }
+    .testimonial-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--radius-lg);
+      padding: 48px 44px;
+      text-align: center;
+      position: relative;
+    }
+    .testimonial-quote {
+      font-size: 5rem;
+      color: var(--gold-dark);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 0.7;
+      margin-bottom: 24px;
+      opacity: 0.5;
+    }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .testimonial-stars { display: flex; justify-content: center; gap: 4px; margin-bottom: 20px; }
+    .testimonial-stars .star { font-size: 1rem; }
+    .testimonial-author {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+    }
+    .testimonial-avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold-dark);
+    }
+    .testimonial-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .testimonial-role {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+    }
+    .slider-controls {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin-top: 36px;
+    }
+    .slider-btn {
+      width: 44px; height: 44px;
+      border: 1.5px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      background: transparent;
+    }
+    .slider-btn:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+    .slider-dots { display: flex; gap: 8px; }
+    .slider-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .slider-dot.active { background: var(--gold); transform: scale(1.3); }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      padding: 120px 5%;
+      background: var(--dark2);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .contact-info { }
+    .contact-item {
+      display: flex; gap: 18px; align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    .contact-icon {
+      width: 50px; height: 50px;
+      background: rgba(201,168,76,0.1);
+      border: 1.5px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-item-title {
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .contact-item-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .contact-item-text a { color: var(--text-muted); transition: color 0.3s; }
+    .contact-item-text a:hover { color: var(--gold); }
+    .contact-social {
+      display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap;
+    }
+    .social-btn {
+      display: flex; align-items: center; gap: 9px;
+      padding: 12px 22px;
+      border-radius: 40px;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 1.5px solid transparent;
+    }
+    .social-btn.instagram {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+    }
+    .social-btn.instagram:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(131,58,180,0.4); }
+    .social-btn.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    .social-btn.whatsapp:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+    .social-btn.maps {
+      background: transparent;
+      border-color: rgba(201,168,76,0.4);
+      color: var(--gold);
+    }
+    .social-btn.maps:hover { background: rgba(201,168,76,0.1); transform: translateY(-3px); }
+    .contact-form-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+    }
+    .contact-form-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .contact-form-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius);
+      padding: 13px 16px;
+      color: var(--text-light);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.04);
+    }
+    .form-group select option { background: var(--dark3); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contact-form-card .btn-primary { width: 100%; margin-top: 6px; border-radius: var(--radius); padding: 15px; }
+
+    /* ===== FOOTER ===== */
+    #footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 80px 5% 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-about {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social-link {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer-social-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+    .footer-col-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      transition: color 0.3s, padding-left 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); padding-left: 6px; }
+    .footer-contact-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .footer-contact-item span:first-child { color: var(--gold); flex-shrink: 0; }
+    .footer-bottom {
+      border-top: 1px solid rgba(201,168,76,0.08);
+      padding-top: 32px;
+      display: flex;
+      align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .footer-copy a { color: var(--gold); transition: color 0.3s; }
+    .footer-copy a:hover { color: var(--gold-light); }
+
+    /* ===== FLOATING BUTTONS ===== */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 90px; right: 24px;
+      width: 54px; height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      z-index: 800;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+      transition: var(--transition);
+      animation: float 3s ease infinite;
+    }
+    .float-whatsapp:hover { transform: scale(1.1) translateY(-4px); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
+    #scroll-top {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      width: 46px; height: 46px;
+      background: var(--dark3);
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 800;
+      opacity: 0; pointer-events: none;
+      transition: var(--transition);
+    }
+    #scroll-top.show { opacity: 1; pointer-events: all; }
+    #scroll-top:hover { background: var(--gold); color: var(--dark); transform: translateY(-3px); }
+
+    /* ===== MENU MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(10px);
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.3s ease; }
+    .modal {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius-lg);
+      width: 100%; max-width: 700px;
+      max-height: 88vh;
+      overflow-y: auto;
+      animation: scaleIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .modal::-webkit-scrollbar { width: 4px; }
+    .modal::-webkit-scrollbar-thumb { background: var(--gold-dark); }
+    .modal-header {
+      padding: 32px 36px 24px;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .modal-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+    .modal-close {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .modal-close:hover { border-color: var(--gold); color: var(--gold); }
+    .modal-body { padding: 28px 36px 36px; }
+    .menu-category { margin-bottom: 32px; }
+    .menu-cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .menu-items { display: flex; flex-direction: column; gap: 12px; }
+    .menu-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+      border: 1px solid rgba(201,168,76,0.06);
+      transition: border-color 0.3s;
+    }
+    .menu-item:hover { border-color: rgba(201,168,76,0.18); }
+    .menu-item-name { font-size: 0.9rem; color: var(--text-light); }
+    .menu-item-desc { font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; }
+    .menu-item-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+    .menu-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 24px;
+      padding: 14px;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+
+    /* ===== DECORATIVE ===== */
+    .gold-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dark), transparent);
+      margin: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { gap: 50px; }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-accent { display: none; }
+      .about-badge { top: 14px; left: 14px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .gallery-item:nth-child(4) { grid-column: span 2; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 560px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-card { padding: 32px 22px; }
+      .modal-body { padding: 22px 22px 30px; }
+      .modal-header { padding: 24px 22px 18px; }
+      .contact-form-card { padding: 28px 22px; }
+      .about-features { grid-template-columns: 1fr; }
+      .spec-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 380px) {
+      .spec-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== LOADER ===== -->
+  <div id="loader" role="status" aria-label="Loading">
+    <div class="loader-center-wrap">
+      <div class="loader-emblem"></div>
+      <div class="loader-inner"></div>
+      <div class="loader-dot"></div>
+    </div>
+    <div class="loader-brand">Mehfill</div>
+    <div class="loader-tagline">Fine Dining · Basti</div>
+    <div class="loader-credit">Made with ❤️ by <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer">Prateek</a></div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" aria-label="Mehfill Fine Dining Home">
+      <div class="nav-logo-main">Mehfill</div>
+      <div class="nav-logo-sub">Fine Dining</div>
+    </a>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="#about" role="menuitem">About</a></li>
+      <li role="none"><a href="#specialities" role="menuitem">Cuisine</a></li>
+      <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+      <li role="none"><a href="#dishes" role="menuitem">Menu</a></li>
+      <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+      <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Book Table</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#about">About</a>
+    <a href="#specialities">Cuisine</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#dishes">Menu</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact">Book a Table</a>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" aria-label="Hero Banner">
+    <!-- Placeholder for hero background image -->
+    <img src="images/hero-banner.jpg" alt="Mehfill Fine Dining ambience – rooftop luxury dining in Basti" class="hero-img" loading="eager" />
+    <div class="hero-bg"></div>
+    <div class="hero-ornament"></div>
+
+    <!-- Particles canvas -->
+    <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-pre">Premium Fine Dining · Basti, U.P.</div>
+      <h1 class="hero-title">
+        Mehfill
+        <span>Fine Dining</span>
+      </h1>
+      <p class="hero-tagline">"Where Taste Meets Ambience"</p>
+      <p class="hero-type-wrap">
+        Experience <span id="type-text"></span>
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openMenuModal()" aria-label="View our menu">View Menu</button>
+        <a href="#contact" class="btn-outline" aria-label="Book a table">Book Table</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="gold-line"></div>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal-left">
+        <!-- Placeholder for about/ambience image -->
+        <img src="images/rooftop-dining.jpg" alt="Mehfill rooftop dining ambience" class="about-img-main" loading="lazy" />
+        <!-- Placeholder for small accent image -->
+        <img src="images/food-plating.jpg" alt="Beautifully plated dish at Mehfill" class="about-img-accent" loading="lazy" />
+        <div class="about-badge">
+          <div class="about-badge-num">5★</div>
+          <div class="about-badge-text">Rated</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <div class="section-header">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title" id="about-title">A Taste of <em>Elegance</em> in Basti</h2>
+          <div class="divider"></div>
+        </div>
+        <p class="about-text">
+          Nestled in the heart of Basti, Mehfill Fine Dining was born from a passion for exceptional food and unforgettable experiences. We believe dining is more than a meal — it is a celebration of flavours, warmth, and togetherness.
+        </p>
+        <p class="about-text">
+          From our stunning rooftop to our thoughtfully crafted interiors, every corner of Mehfill is designed to create moments worth remembering. Whether you're celebrating a birthday, a family gathering, or simply craving restaurant-quality flavours — Mehfill welcomes you.
+        </p>
+        <p class="about-text">
+          Our chefs bring the finest North Indian spices, Chinese authenticity, Italian-style pizzas, and crafted mocktails to your table — served with the warmth of Uttar Pradesh hospitality.
+        </p>
+        <div class="about-features">
+          <div class="about-feature"><div class="about-feature-icon">🌅</div> Rooftop Dining</div>
+          <div class="about-feature"><div class="about-feature-icon">👨‍👩‍👧‍👦</div> Family Friendly</div>
+          <div class="about-feature"><div class="about-feature-icon">🎂</div> Birthday Events</div>
+          <div class="about-feature"><div class="about-feature-icon">📸</div> Instagram Worthy</div>
+          <div class="about-feature"><div class="about-feature-icon">🌿</div> Fresh Ingredients</div>
+          <div class="about-feature"><div class="about-feature-icon">🏮</div> Premium Ambience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COUNTERS SECTION ===== -->
+  <section id="counters" aria-label="Restaurant statistics">
+    <div class="counters-grid">
+      <div class="counter-item reveal">
+        <div class="counter-num"><span class="count-val" data-target="500">0</span><span class="counter-suffix">+</span></div>
+        <div class="counter-divider"></div>
+        <div class="counter-label">Happy Guests Monthly</div>
+      </div>
+      <div class="counter-item reveal" style="transition-delay:0.1s">
+        <div class="counter-num"><span class="count-val" data-target="50">0</span><span class="counter-suffix">+</span></div>
+        <div class="counter-divider"></div>
+        <div class="counter-label">Signature Dishes</div>
+      </div>
+      <div class="counter-item reveal" style="transition-delay:0.2s">
+        <div class="counter-num"><span class="count-val" data-target="5">0</span><span class="counter-suffix">★</span></div>
+        <div class="counter-divider"></div>
+        <div class="counter-label">Google Rating</div>
+      </div>
+      <div class="counter-item reveal" style="transition-delay:0.3s">
+        <div class="counter-num"><span class="count-val" data-target="3">0</span><span class="counter-suffix">+</span></div>
+        <div class="counter-divider"></div>
+        <div class="counter-label">Years of Excellence</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECIALITIES SECTION ===== -->
+  <section id="specialities" aria-labelledby="spec-title">
+    <div class="section-header reveal">
+      <div class="section-label">What We Serve</div>
+      <h2 class="section-title" id="spec-title">Our <em>Cuisine</em> Specialities</h2>
+      <p class="section-desc">From the bold spices of North India to the subtle art of Chinese cuisine and crispy wood-fired pizzas — we have a world of flavours waiting for you.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="spec-grid">
+
+      <!-- North Indian -->
+      <article class="spec-card reveal" style="transition-delay:0.05s">
+        <div class="spec-img-wrap">
+          <img src="images/north-indian.jpg" alt="North Indian cuisine – paneer butter masala and naan" class="spec-img" loading="lazy" />
+        </div>
+        <div class="spec-body">
+          <div class="spec-icon">🍛</div>
+          <div class="spec-name">North Indian</div>
+          <p class="spec-desc">Rich gravies, aromatic biryanis, creamy dals — the authentic flavours of the North, crafted with love and tradition.</p>
+        </div>
+      </article>
+
+      <!-- Chinese -->
+      <article class="spec-card reveal" style="transition-delay:0.1s">
+        <div class="spec-img-wrap">
+          <img src="images/chinese-food.jpg" alt="Chinese cuisine – noodles and manchurian" class="spec-img" loading="lazy" />
+        </div>
+        <div class="spec-body">
+          <div class="spec-icon">🥢</div>
+          <div class="spec-name">Chinese</div>
+          <p class="spec-desc">Indo-Chinese delicacies with bold sauces, stir-fried noodles, and signature manchurian dishes that keep you coming back.</p>
+        </div>
+      </article>
+
+      <!-- Pizza -->
+      <article class="spec-card reveal" style="transition-delay:0.15s">
+        <div class="spec-img-wrap">
+          <img src="images/pizza.jpg" alt="Freshly baked pizza with premium toppings" class="spec-img" loading="lazy" />
+        </div>
+        <div class="spec-body">
+          <div class="spec-icon">🍕</div>
+          <div class="spec-name">Pizza</div>
+          <p class="spec-desc">Hand-tossed, baked to golden perfection with fresh toppings, melted cheese and rich tomato sauce on every slice.</p>
+        </div>
+      </article>
+
+      <!-- Fast Food -->
+      <article class="spec-card reveal" style="transition-delay:0.2s">
+        <div class="spec-img-wrap">
+          <img src="images/fast-food.jpg" alt="Fast food – burgers, fries and wraps" class="spec-img" loading="lazy" />
+        </div>
+        <div class="spec-body">
+          <div class="spec-icon">🍔</div>
+          <div class="spec-name">Fast Food</div>
+          <p class="spec-desc">Gourmet burgers, crispy snacks and hearty bites — quick, delicious and made fresh every time for those on the go.</p>
+        </div>
+      </article>
+
+      <!-- Mocktails -->
+      <article class="spec-card reveal" style="transition-delay:0.25s">
+        <div class="spec-img-wrap">
+          <img src="images/mocktails.jpg" alt="Crafted mocktails and fresh beverages" class="spec-img" loading="lazy" />
+        </div>
+        <div class="spec-body">
+          <div class="spec-icon">🍹</div>
+          <div class="spec-name">Mocktails</div>
+          <p class="spec-desc">Vibrant, handcrafted mocktails bursting with fresh fruit flavours — the perfect companion to every meal.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" aria-labelledby="gallery-title">
+    <div class="section-header reveal">
+      <div class="section-label">Moments & Memories</div>
+      <h2 class="section-title" id="gallery-title">Step Into Our <em>World</em></h2>
+      <p class="section-desc">Every corner of Mehfill is designed to be remembered. Explore our ambience, food, and the moments that make us special.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-grid" role="list" aria-label="Restaurant photo gallery">
+      <div class="gallery-item reveal" role="listitem">
+        <img src="images/gallery-rooftop.jpg" alt="Mehfill rooftop dining area with warm lights" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay"><span>Rooftop Dining</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.1s" role="listitem">
+        <img src="images/gallery-interior.jpg" alt="Mehfill interior dining hall" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay"><span>Indoor Dining</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.15s" role="listitem">
+        <img src="images/gallery-food1.jpg" alt="Signature dish presentation at Mehfill" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay"><span>Signature Dish</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.2s" role="listitem">
+        <img src="images/gallery-food2.jpg" alt="Beautifully plated North Indian food at Mehfill" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay"><span>North Indian Platter</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.25s" role="listitem">
+        <img src="images/gallery-birthday.jpg" alt="Birthday celebration setup at Mehfill" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay"><span>Celebrations</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.3s" role="listitem">
+        <img src="images/gallery-mocktail.jpg" alt="Crafted mocktails at Mehfill" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay"><span>Mocktail Bar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR DISHES SECTION ===== -->
+  <section id="dishes" aria-labelledby="dishes-title">
+    <div class="section-header reveal">
+      <div class="section-label">Fan Favourites</div>
+      <h2 class="section-title" id="dishes-title">Most <em>Loved</em> Dishes</h2>
+      <p class="section-desc">Dishes that our guests keep ordering, again and again. Each one crafted with the finest ingredients and a whole lot of love.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="dishes-grid">
+
+      <!-- Dish 1 -->
+      <article class="dish-card reveal" style="transition-delay:0.05s">
+        <div class="dish-img-wrap">
+          <img src="images/dish-paneer-butter-masala.jpg" alt="Paneer Butter Masala – creamy tomato gravy with soft paneer" class="dish-img" loading="lazy" />
+          <div class="dish-badge">Chef's Pick</div>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Paneer Butter Masala</h3>
+          <p class="dish-desc">Velvety smooth tomato gravy with tender paneer cubes, finished with butter and aromatic spices.</p>
+          <div class="dish-footer">
+            <div class="dish-price">₹<span>249</span></div>
+            <div class="dish-rating" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 2 -->
+      <article class="dish-card reveal" style="transition-delay:0.1s">
+        <div class="dish-img-wrap">
+          <img src="images/dish-veg-biryani.jpg" alt="Veg Biryani – fragrant basmati rice with vegetables and spices" class="dish-img" loading="lazy" />
+          <div class="dish-badge">Must Try</div>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Veg Biryani</h3>
+          <p class="dish-desc">Long-grain basmati rice slow-cooked with fresh vegetables, saffron, and whole spices for a royal flavour.</p>
+          <div class="dish-footer">
+            <div class="dish-price">₹<span>199</span></div>
+            <div class="dish-rating" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 3 -->
+      <article class="dish-card reveal" style="transition-delay:0.15s">
+        <div class="dish-img-wrap">
+          <img src="images/dish-honey-chilli-potato.jpg" alt="Honey Chilli Potato – crispy fried potato in sweet chilli sauce" class="dish-img" loading="lazy" />
+          <div class="dish-badge">Fan Fave</div>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Honey Chilli Potato</h3>
+          <p class="dish-desc">Golden-fried potato fingers tossed in a sticky sweet-and-spicy honey chilli glaze — absolutely irresistible.</p>
+          <div class="dish-footer">
+            <div class="dish-price">₹<span>149</span></div>
+            <div class="dish-rating" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 4 -->
+      <article class="dish-card reveal" style="transition-delay:0.2s">
+        <div class="dish-img-wrap">
+          <img src="images/dish-paneer-chilli.jpg" alt="Paneer Chilli – crispy paneer in Indo-Chinese sauce" class="dish-img" loading="lazy" />
+          <div class="dish-badge">Bestseller</div>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Paneer Chilli</h3>
+          <p class="dish-desc">Crispy battered paneer tossed with bell peppers, onions and a fiery Indo-Chinese sauce. Bold and addictive.</p>
+          <div class="dish-footer">
+            <div class="dish-price">₹<span>219</span></div>
+            <div class="dish-rating" aria-label="4.5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star empty" aria-hidden="true">★</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 5 -->
+      <article class="dish-card reveal" style="transition-delay:0.25s">
+        <div class="dish-img-wrap">
+          <img src="images/dish-pizza.jpg" alt="Mehfill Special Pizza with loaded toppings" class="dish-img" loading="lazy" />
+          <div class="dish-badge">New</div>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Mehfill Special Pizza</h3>
+          <p class="dish-desc">Our signature thin-crust pizza loaded with farm-fresh veggies, double cheese and our secret sauce blend.</p>
+          <div class="dish-footer">
+            <div class="dish-price">₹<span>299</span></div>
+            <div class="dish-rating" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 6 -->
+      <article class="dish-card reveal" style="transition-delay:0.3s">
+        <div class="dish-img-wrap">
+          <img src="images/dish-mocktail.jpg" alt="Signature Mehfill mocktail collection" class="dish-img" loading="lazy" />
+          <div class="dish-badge">Instagram Hit</div>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-name">Mocktail Collection</h3>
+          <p class="dish-desc">Vibrant, handcrafted mocktails — from tropical fruit blends to refreshing mint coolers, each one a visual treat.</p>
+          <div class="dish-footer">
+            <div class="dish-price">₹<span>99</span></div>
+            <div class="dish-rating" aria-label="5 out of 5 stars">
+              <span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div style="text-align:center;margin-top:52px;" class="reveal">
+      <button class="btn-primary" onclick="openMenuModal()" aria-label="View full menu">View Full Menu</button>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section id="why" aria-labelledby="why-title">
+    <div class="section-header reveal">
+      <div class="section-label">Our Promise</div>
+      <h2 class="section-title" id="why-title">Why <em>Mehfill</em>?</h2>
+      <p class="section-desc">We go beyond great food. Every detail at Mehfill is crafted to give you an extraordinary dining experience.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="why-grid">
+      <article class="why-card reveal" style="transition-delay:0.05s">
+        <div class="why-icon" aria-hidden="true">🌅</div>
+        <h3 class="why-title">Rooftop Dining</h3>
+        <p class="why-desc">Dine under the open sky with panoramic views of Basti city. Our rooftop is perfect for romantic evenings and special occasions.</p>
+      </article>
+      <article class="why-card reveal" style="transition-delay:0.1s">
+        <div class="why-icon" aria-hidden="true">🧼</div>
+        <h3 class="why-title">Hygienic Kitchen</h3>
+        <p class="why-desc">Our kitchen follows the highest standards of cleanliness and food safety. Every dish is prepared in a spotless, well-organised environment.</p>
+      </article>
+      <article class="why-card reveal" style="transition-delay:0.15s">
+        <div class="why-icon" aria-hidden="true">🌿</div>
+        <h3 class="why-title">Fresh Ingredients</h3>
+        <p class="why-desc">We source the freshest local produce and finest spices daily. No compromise on quality — ever. Taste the difference it makes.</p>
+      </article>
+      <article class="why-card reveal" style="transition-delay:0.2s">
+        <div class="why-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+        <h3 class="why-title">Family Environment</h3>
+        <p class="why-desc">A warm, welcoming space for the whole family. From kids' meals to group seating, Mehfill is built for moments with loved ones.</p>
+      </article>
+      <article class="why-card reveal" style="transition-delay:0.25s">
+        <div class="why-icon" aria-hidden="true">⚡</div>
+        <h3 class="why-title">Fast Service</h3>
+        <p class="why-desc">We respect your time. Our team is trained to deliver prompt, courteous service without ever compromising on the quality of your meal.</p>
+      </article>
+      <article class="why-card reveal" style="transition-delay:0.3s">
+        <div class="why-icon" aria-hidden="true">✨</div>
+        <h3 class="why-title">Beautiful Ambience</h3>
+        <p class="why-desc">Thoughtfully designed spaces — from warm indoor lighting to breezy outdoor seating. Every visit is an Instagrammable experience.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS SECTION ===== -->
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <div class="section-header reveal">
+      <div class="section-label">Guest Reviews</div>
+      <h2 class="section-title" id="testimonials-title">What Our <em>Guests</em> Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials-wrap">
+      <div class="testimonial-slider" role="region" aria-label="Customer testimonials slider">
+        <div class="testimonial-track" id="testimonial-track">
+
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 1 of 5">
+            <div class="testimonial-card">
+              <div class="testimonial-quote" aria-hidden="true">"</div>
+              <p class="testimonial-text">The rooftop dining experience at Mehfill is absolutely magical. The Paneer Butter Masala is the best I have ever had in Basti — rich, creamy and perfectly spiced. We celebrated our anniversary here and it was perfect!</p>
+              <div class="testimonial-stars" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <div class="testimonial-author">
+                <img src="images/avatar-1.jpg" alt="Priya Sharma" class="testimonial-avatar" loading="lazy" />
+                <div>
+                  <div class="testimonial-name">Priya Sharma</div>
+                  <div class="testimonial-role">Regular Guest · Basti</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 2 of 5">
+            <div class="testimonial-card">
+              <div class="testimonial-quote" aria-hidden="true">"</div>
+              <p class="testimonial-text">Mehfill is hands down the best restaurant in Basti. The ambience is stunning, the food is incredible and the service is top notch. The Honey Chilli Potato and the Special Pizza were our favourites — we will definitely be back!</p>
+              <div class="testimonial-stars" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <div class="testimonial-author">
+                <img src="images/avatar-2.jpg" alt="Rahul Gupta" class="testimonial-avatar" loading="lazy" />
+                <div>
+                  <div class="testimonial-name">Rahul Gupta</div>
+                  <div class="testimonial-role">Food Blogger · Lucknow</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 3 of 5">
+            <div class="testimonial-card">
+              <div class="testimonial-quote" aria-hidden="true">"</div>
+              <p class="testimonial-text">We booked the rooftop for our family function and Mehfill exceeded every expectation. The decorations were beautiful, the food was fresh and abundant, and the staff were so attentive. Truly a 5-star experience right here in Basti!</p>
+              <div class="testimonial-stars" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <div class="testimonial-author">
+                <img src="images/avatar-3.jpg" alt="Anita Tiwari" class="testimonial-avatar" loading="lazy" />
+                <div>
+                  <div class="testimonial-name">Anita Tiwari</div>
+                  <div class="testimonial-role">Family Diner · Basti</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 4 of 5">
+            <div class="testimonial-card">
+              <div class="testimonial-quote" aria-hidden="true">"</div>
+              <p class="testimonial-text">The mocktail collection here is something else — so creative and beautifully presented. I visited for a friend's birthday and the entire arrangement was perfect. The Indo-Chinese food is extraordinary. Highly recommended!</p>
+              <div class="testimonial-stars" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <div class="testimonial-author">
+                <img src="images/avatar-4.jpg" alt="Vikash Singh" class="testimonial-avatar" loading="lazy" />
+                <div>
+                  <div class="testimonial-name">Vikash Singh</div>
+                  <div class="testimonial-role">College Student · Basti</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide" role="group" aria-label="Testimonial 5 of 5">
+            <div class="testimonial-card">
+              <div class="testimonial-quote" aria-hidden="true">"</div>
+              <p class="testimonial-text">I have dined at many restaurants across UP but Mehfill Fine Dining is truly special. The quality of ingredients, the presentation, the ambience — everything is premium. The Veg Biryani was fragrant and delicious. A must-visit!</p>
+              <div class="testimonial-stars" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <div class="testimonial-author">
+                <img src="images/avatar-5.jpg" alt="Neha Pandey" class="testimonial-avatar" loading="lazy" />
+                <div>
+                  <div class="testimonial-name">Neha Pandey</div>
+                  <div class="testimonial-role">Travel Enthusiast · Gorakhpur</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /testimonial-track -->
+      </div><!-- /testimonial-slider -->
+
+      <div class="slider-controls" role="group" aria-label="Testimonial slider controls">
+        <button class="slider-btn" id="prev-btn" aria-label="Previous testimonial">&#8592;</button>
+        <div class="slider-dots" role="tablist" id="slider-dots"></div>
+        <button class="slider-btn" id="next-btn" aria-label="Next testimonial">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="section-header reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title" id="contact-title">Visit Us or <em>Book</em> a Table</h2>
+      <p class="section-desc">We would love to host you. Drop by, give us a call, or fill in the form and we will get back to you.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">📍</div>
+          <div>
+            <div class="contact-item-title">Address</div>
+            <div class="contact-item-text">Near Janta Hotel, Above FirstCry Showroom,<br />Amhat Vairihawa, Basti,<br />Uttar Pradesh 272002</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">📞</div>
+          <div>
+            <div class="contact-item-title">Phone</div>
+            <div class="contact-item-text"><a href="tel:+918090462440">+91 80904 62440</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">🕐</div>
+          <div>
+            <div class="contact-item-title">Opening Hours</div>
+            <div class="contact-item-text">
+              Mon – Sun: 11:00 AM – 11:00 PM<br />
+              <span style="color:var(--gold);font-size:0.78rem;">Open 7 days a week</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="https://www.instagram.com/mehfill_finedining" target="_blank" rel="noopener noreferrer" class="social-btn instagram" aria-label="Follow us on Instagram">
+            <span>📸</span> Instagram
+          </a>
+          <a href="https://wa.me/918090462440" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp" aria-label="Chat on WhatsApp">
+            <span>💬</span> WhatsApp
+          </a>
+          <a href="https://maps.app.goo.gl/GyMf3q1sHLUjc64n6" target="_blank" rel="noopener noreferrer" class="social-btn maps" aria-label="View on Google Maps">
+            <span>🗺️</span> Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- Reservation Form -->
+      <div class="contact-form-card reveal-right">
+        <h3>Reserve Your Table</h3>
+        <p>Fill in your details and we'll confirm your reservation shortly.</p>
+        <div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Your name" autocomplete="given-name" aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="phone-book">Phone</label>
+              <input type="tel" id="phone-book" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" aria-required="true" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" aria-required="true" />
+            </div>
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" aria-required="true" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" name="guests">
+              <option value="">Select guests</option>
+              <option value="1-2">1 – 2 Guests</option>
+              <option value="3-5">3 – 5 Guests</option>
+              <option value="6-10">6 – 10 Guests</option>
+              <option value="10+">More than 10</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="occasion">Occasion (Optional)</label>
+            <select id="occasion" name="occasion">
+              <option value="">Select occasion</option>
+              <option value="birthday">Birthday Celebration</option>
+              <option value="anniversary">Anniversary</option>
+              <option value="family">Family Gathering</option>
+              <option value="group">Group Dining</option>
+              <option value="date">Date Night</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes">Special Requests</label>
+            <textarea id="notes" name="notes" placeholder="Any special requirements or requests..." aria-label="Special requests"></textarea>
+          </div>
+          <button class="btn-primary" onclick="submitBooking()" type="button" aria-label="Confirm table reservation">Confirm Reservation</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" aria-label="Mehfill Fine Dining">
+          <div class="nav-logo-main">Mehfill</div>
+          <div class="nav-logo-sub">Fine Dining</div>
+        </a>
+        <p class="footer-about">
+          Premium fine dining in the heart of Basti, Uttar Pradesh. Where every meal is a celebration and every visit a memory. North Indian · Chinese · Pizza · Mocktails.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/mehfill_finedining" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/918090462440" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp">💬</a>
+          <a href="https://maps.app.goo.gl/GyMf3q1sHLUjc64n6" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Google Maps">🗺️</a>
+          <a href="tel:+918090462440" class="footer-social-link" aria-label="Call us">📞</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#about">About Us</a>
+          <a href="#specialities">Our Cuisine</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#dishes">Popular Dishes</a>
+          <a href="#why">Why Mehfill</a>
+          <a href="#testimonials">Reviews</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Cuisine</div>
+        <nav class="footer-links" aria-label="Cuisine types">
+          <a href="#specialities">North Indian</a>
+          <a href="#specialities">Chinese</a>
+          <a href="#specialities">Pizza</a>
+          <a href="#specialities">Fast Food</a>
+          <a href="#specialities">Mocktails</a>
+          <a href="#contact">Family Dining</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Near Janta Hotel, Above FirstCry, Amhat Vairihawa, Basti UP 272002</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <a href="tel:+918090462440" style="color:var(--text-muted)">+91 80904 62440</a>
+        </div>
+        <div class="footer-contact-item">
+          <span>🕐</span>
+          <span>11:00 AM – 11:00 PM · 7 Days</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📸</span>
+          <a href="https://www.instagram.com/mehfill_finedining" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted)">@mehfill_finedining</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2025 Mehfill Fine Dining. All rights reserved.
+      </div>
+      <div class="footer-copy">
+        Designed with ❤️ by <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer">Prateek</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+  <a href="https://wa.me/918090462440" target="_blank" rel="noopener noreferrer" class="float-whatsapp" aria-label="Chat with us on WhatsApp">💬</a>
+
+  <!-- ===== SCROLL TO TOP BUTTON ===== -->
+  <button id="scroll-top" aria-label="Scroll back to top" onclick="scrollToTop()">↑</button>
+
+  <!-- ===== MENU MODAL ===== -->
+  <div class="modal-overlay" id="menu-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-title">Our Menu</h2>
+        <button class="modal-close" onclick="closeMenuModal()" aria-label="Close menu">✕</button>
+      </div>
+      <div class="modal-body">
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🍛 North Indian</div>
+          <div class="menu-items">
+            <div class="menu-item"><div><div class="menu-item-name">Paneer Butter Masala</div><div class="menu-item-desc">Creamy tomato gravy with soft paneer</div></div><div class="menu-item-price">₹249</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Dal Makhani</div><div class="menu-item-desc">Slow-cooked black lentils in buttery gravy</div></div><div class="menu-item-price">₹199</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Veg Biryani</div><div class="menu-item-desc">Fragrant basmati with seasonal vegetables</div></div><div class="menu-item-price">₹199</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Shahi Paneer</div><div class="menu-item-desc">Rich mughlai style paneer curry</div></div><div class="menu-item-price">₹259</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kadai Paneer</div><div class="menu-item-desc">Spicy wok-cooked paneer with peppers</div></div><div class="menu-item-price">₹229</div></div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🥢 Chinese</div>
+          <div class="menu-items">
+            <div class="menu-item"><div><div class="menu-item-name">Veg Manchurian</div><div class="menu-item-desc">Crispy veggie balls in spicy manchurian sauce</div></div><div class="menu-item-price">₹169</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Paneer Chilli</div><div class="menu-item-desc">Crispy paneer in Indo-Chinese chilli sauce</div></div><div class="menu-item-price">₹219</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Honey Chilli Potato</div><div class="menu-item-desc">Fried potatoes in sweet-spicy honey glaze</div></div><div class="menu-item-price">₹149</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Veg Hakka Noodles</div><div class="menu-item-desc">Stir-fried noodles with fresh vegetables</div></div><div class="menu-item-price">₹159</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Veg Fried Rice</div><div class="menu-item-desc">Wok-tossed rice with vegetables and soy</div></div><div class="menu-item-price">₹149</div></div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🍕 Pizza</div>
+          <div class="menu-items">
+            <div class="menu-item"><div><div class="menu-item-name">Mehfill Special Pizza</div><div class="menu-item-desc">Signature pizza with loaded toppings</div></div><div class="menu-item-price">₹299</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Margherita Pizza</div><div class="menu-item-desc">Classic tomato, basil and mozzarella</div></div><div class="menu-item-price">₹199</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Paneer Tikka Pizza</div><div class="menu-item-desc">Smoky paneer tikka on pizza base</div></div><div class="menu-item-price">₹259</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Farmhouse Pizza</div><div class="menu-item-desc">Fresh veggies on a crispy thin crust</div></div><div class="menu-item-price">₹229</div></div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🍔 Fast Food</div>
+          <div class="menu-items">
+            <div class="menu-item"><div><div class="menu-item-name">Veg Burger</div><div class="menu-item-desc">Crispy patty with fresh vegetables in a bun</div></div><div class="menu-item-price">₹99</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Paneer Wrap</div><div class="menu-item-desc">Grilled paneer in a soft flour tortilla</div></div><div class="menu-item-price">₹129</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">French Fries</div><div class="menu-item-desc">Golden crispy fries with dipping sauce</div></div><div class="menu-item-price">₹79</div></div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🍹 Mocktails & Beverages</div>
+          <div class="menu-items">
+            <div class="menu-item"><div><div class="menu-item-name">Virgin Mojito</div><div class="menu-item-desc">Mint, lime, sugar and sparkling water</div></div><div class="menu-item-price">₹99</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Watermelon Cooler</div><div class="menu-item-desc">Fresh watermelon with mint and ice</div></div><div class="menu-item-price">₹99</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mango Tango</div><div class="menu-item-desc">Fresh mango blended with lime and soda</div></div><div class="menu-item-price">₹119</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Blue Ocean</div><div class="menu-item-desc">Blue curacao syrup, lemon and sparkling water</div></div><div class="menu-item-price">₹129</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Masala Lemonade</div><div class="menu-item-desc">Tangy, spiced fresh lemonade</div></div><div class="menu-item-price">₹79</div></div>
+          </div>
+        </div>
+
+        <p class="menu-note">📋 Prices inclusive of taxes. Menu subject to change. For group bookings & special menus, please call us at <a href="tel:+918090462440" style="color:var(--gold)">+91 80904 62440</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ===== LOADER =====
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+        document.body.style.overflow = 'visible';
+      }, 1800);
+    });
+    document.body.style.overflow = 'hidden';
+
+    // ===== NAVBAR SCROLL EFFECT =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      // Scroll top button
+      const scrollBtn = document.getElementById('scroll-top');
+      if (window.scrollY > 400) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+
+    // ===== HAMBURGER MENU =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        mobileNav.classList.add('show');
+      } else {
+        mobileNav.classList.remove('show');
+      }
+    });
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        mobileNav.classList.remove('show');
+      });
+    });
+
+    // ===== ACTIVE NAVBAR LINK =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + entry.target.id) {
+              a.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => observer.observe(s));
+
+    // ===== SCROLL REVEAL =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ===== TYPING EFFECT =====
+    const typeTexts = [
+      'Rooftop Dining ✨',
+      'North Indian Flavours 🍛',
+      'Authentic Chinese 🥢',
+      'Crispy Pizzas 🍕',
+      'Crafted Mocktails 🍹',
+      'Family Moments ❤️'
+    ];
+    let typeIdx = 0, charIdx = 0, isDeleting = false;
+    const typeEl = document.getElementById('type-text');
+    function typeLoop() {
+      if (!typeEl) return;
+      const current = typeTexts[typeIdx];
+      if (isDeleting) {
+        typeEl.textContent = current.substring(0, charIdx--);
+        if (charIdx < 0) {
+          isDeleting = false;
+          typeIdx = (typeIdx + 1) % typeTexts.length;
+          setTimeout(typeLoop, 500);
+          return;
+        }
+        setTimeout(typeLoop, 50);
+      } else {
+        typeEl.textContent = current.substring(0, charIdx++);
+        if (charIdx > current.length) {
+          isDeleting = true;
+          setTimeout(typeLoop, 1800);
+          return;
+        }
+        setTimeout(typeLoop, 80);
+      }
+    }
+    setTimeout(typeLoop, 2000);
+
+    // ===== HERO PARTICLES =====
+    (function createParticles() {
+      const container = document.getElementById('hero-particles');
+      if (!container) return;
+      for (let i = 0; i < 28; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.cssText = `
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          animation-duration: ${4 + Math.random() * 6}s;
+          animation-delay: ${Math.random() * 5}s;
+          opacity: ${0.1 + Math.random() * 0.4};
+          width: ${1 + Math.random() * 3}px;
+          height: ${1 + Math.random() * 3}px;
+        `;
+        container.appendChild(p);
+      }
+    })();
+
+    // ===== ANIMATED COUNTERS =====
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-target'));
+      const duration = 1800;
+      const start = performance.now();
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(update);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.count-val').forEach(animateCounter);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    const countersSec = document.getElementById('counters');
+    if (countersSec) counterObs.observe(countersSec);
+
+    // ===== TESTIMONIAL SLIDER =====
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const track = document.getElementById('testimonial-track');
+    const dotsContainer = document.getElementById('slider-dots');
+    const totalSlides = slides.length;
+    let autoSlideTimer;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+      dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(idx) {
+      currentSlide = (idx + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentSlide);
+        d.setAttribute('aria-selected', i === currentSlide ? 'true' : 'false');
+      });
+      resetAutoSlide();
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideTimer);
+      autoSlideTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => goToSlide(currentSlide - 1));
+    document.getElementById('next-btn').addEventListener('click', () => goToSlide(currentSlide + 1));
+
+    // Touch/Swipe support for slider
+    let touchStartX = 0;
+    const sliderEl = document.querySelector('.testimonial-slider');
+    sliderEl.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    sliderEl.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+    });
+
+    resetAutoSlide();
+
+    // ===== MENU MODAL =====
+    function openMenuModal() {
+      document.getElementById('menu-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenuModal() {
+      document.getElementById('menu-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('menu-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeMenuModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenuModal();
+    });
+
+    // ===== BOOKING FORM SUBMIT =====
+    function submitBooking() {
+      const fname = document.getElementById('fname').value.trim();
+      const phone = document.getElementById('phone-book').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const guests = document.getElementById('guests').value;
+      if (!fname || !phone || !date || !time || !guests) {
+        alert('Please fill in all required fields to complete your reservation.');
+        return;
+      }
+      // Format WhatsApp message
+      const occasion = document.getElementById('occasion').value;
+      const notes = document.getElementById('notes').value.trim();
+      let msg = `Hello Mehfill Fine Dining! 👋\n\nI'd like to reserve a table:\n\n👤 Name: ${fname}\n📞 Phone: ${phone}\n📅 Date: ${date}\n🕐 Time: ${time}\n👥 Guests: ${guests}`;
+      if (occasion) msg += `\n🎉 Occasion: ${occasion}`;
+      if (notes) msg += `\n📝 Special Requests: ${notes}`;
+      const waUrl = `https://wa.me/918090462440?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // ===== SCROLL TO TOP =====
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ===== SMOOTH SCROLL for anchor links =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 72;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+<!--
+==================================================
+IMAGE ASSETS REQUIRED
+==================================================
+
+1.  hero-banner.jpg          — 1920×1080 — Main hero background banner showing the rooftop or interior of Mehfill Fine Dining with warm ambient lighting
+
+2.  rooftop-dining.jpg       — 1200×800  — Rooftop seating area at Mehfill with decorative lights and cityscape — used in About section
+
+3.  food-plating.jpg         — 600×600   — Beautifully plated dish (e.g. Paneer Butter Masala) shot from above — used as accent image in About section
+
+4.  north-indian.jpg         — 800×540   — North Indian cuisine spread (dal, paneer gravy, naan, biryani) — used in Specialities section
+
+5.  chinese-food.jpg         — 800×540   — Indo-Chinese dishes (manchurian, noodles, fried rice) — used in Specialities section
+
+6.  pizza.jpg                — 800×540   — Freshly baked pizza with toppings, melted cheese — used in Specialities section
+
+7.  fast-food.jpg            — 800×540   — Gourmet burgers, fries and wraps — used in Specialities section
+
+8.  mocktails.jpg            — 800×540   — Vibrant mocktail drinks in tall glasses with garnish — used in Specialities section
+
+9.  gallery-rooftop.jpg      — 1200×800  — Wide shot of the rooftop dining area lit at night — used in Gallery section (large featured image)
+
+10. gallery-interior.jpg     — 600×600   — Interior dining hall with ambient lighting — used in Gallery section
+
+11. gallery-food1.jpg        — 600×600   — Signature dish up-close shot (food photography style) — used in Gallery section
+
+12. gallery-food2.jpg        — 1200×500  — North Indian platter overhead shot — used in Gallery section (wide image)
+
+13. gallery-birthday.jpg     — 600×600   — Birthday celebration setup with cake and balloons at Mehfill — used in Gallery section
+
+14. gallery-mocktail.jpg     — 600×600   — Colourful mocktails on bar counter — used in Gallery section
+
+15. dish-paneer-butter-masala.jpg — 800×600 — Hero shot of Paneer Butter Masala in a karahi — used in Popular Dishes section
+
+16. dish-veg-biryani.jpg     — 800×600   — Veg Biryani served in a pot or plate with raita — used in Popular Dishes section
+
+17. dish-honey-chilli-potato.jpg — 800×600 — Honey Chilli Potato served on a plate with garnish — used in Popular Dishes section
+
+18. dish-paneer-chilli.jpg   — 800×600   — Paneer Chilli dish with bell peppers and onions — used in Popular Dishes section
+
+19. dish-pizza.jpg           — 800×600   — Mehfill Special Pizza with loaded toppings — used in Popular Dishes section
+
+20. dish-mocktail.jpg        — 800×600   — Signature mocktail collection displayed together — used in Popular Dishes section
+
+21. avatar-1.jpg             — 100×100   — Profile photo placeholder for testimonial reviewer Priya Sharma
+
+22. avatar-2.jpg             — 100×100   — Profile photo placeholder for testimonial reviewer Rahul Gupta
+
+23. avatar-3.jpg             — 100×100   — Profile photo placeholder for testimonial reviewer Anita Tiwari
+
+24. avatar-4.jpg             — 100×100   — Profile photo placeholder for testimonial reviewer Vikash Singh
+
+25. avatar-5.jpg             — 100×100   — Profile photo placeholder for testimonial reviewer Neha Pandey
+
+==================================================
+NOTE: All images should be placed inside an "images/" folder
+alongside the HTML file. Optimise all images (WebP preferred
+where possible) for faster loading. Hero banner can be provided
+as both 1920×1080 (desktop) and 768×1080 (mobile) for art direction.
+==================================================
+-->
